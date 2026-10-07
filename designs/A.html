@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Verdict first · Document check</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mock.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4"/><path d="M14 2v6h6"/><path d="M20 8v3"/><circle cx="16" cy="16" r="3.5"/><path d="m21 21-2.5-2.5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-ref" viewBox="0 0 24 24"><path d="M3 5h6a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H3z"/><path d="M21 5h-6a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h7z"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+</svg>
+
+<div class="mock-title"><b>A</b><span>Verdict first</span><a href="../index.html#A">Back to the design document</a></div>
+
+<section class="state">
+  <div class="state-label"><i>1</i>Waiting on one decision <small>two clashes fixed, one the client's documents cannot settle</small></div>
+  <div class="pair">
+    <div class="phone-col">
+      <p class="cap">Phone · 390</p>
+      <div class="phone" id="A-1-phone"><div class="ptop"><svg class="ic"><use href="#i-back"/></svg>E-services tender</div>
+        <div class="pfeed ph">
+          <div class="card">
+            <div class="hd"><span class="nm"><svg class="ic"><use href="#i-doc"/></svg>Document check</span><span class="sp"></span><span class="mt">Fable · max</span></div>
+            <div class="edge"></div>
+            <div class="ttl">E-services tender, lot 1</div>
+            <div class="verdict"><span class="v-big">1 decision left</span><span class="v-rest">2 fixed</span>
+              <span class="rounds"><i class="rd done"></i><i class="rd clean"></i><i class="rd left"></i><span class="rl">nothing new in round 2 of 3</span></span></div>
+            <div class="dec">
+              <div class="eb">Delivery period</div>
+              <div class="slips">
+                <div class="slip">“…within <mark class="a">eight months</mark> of signing the contract.”<div class="src"><b>Technical proposal</b><span>p. 18</span></div></div>
+                <div class="or">or</div>
+                <div class="slip">“The prices above cover <mark class="a">ten months</mark> of implementation work.”<div class="src"><b>Price offer</b><span>p. 2</span></div></div>
+              </div>
+              <div class="note"><svg class="ic"><use href="#i-ref"/></svg><span>Terms of reference allows up to twelve months.</span></div>
+            </div>
+            <div class="band"><div class="eb">Fixed and checked again</div>
+              <div class="fix"><svg class="ic"><use href="#i-check"/></svg><span class="s">Offer validity</span><span class="chg"><s>90</s><span class="arrow">→</span><span class="new">120 days</span></span><span class="w">Technical proposal · p. 3</span></div>
+              <div class="fix"><svg class="ic"><use href="#i-check"/></svg><span class="s">Total price</span><span class="chg"><s>468,000</s><span class="arrow">→</span><span class="new">BGN 486,000</span></span><span class="w">Technical proposal · p. 31</span></div>
+            </div>
+            <div class="foot"><span><svg class="ic"><use href="#i-check"/></svg>144 of 144 pages read</span><span><svg class="ic"><use href="#i-check"/></svg>612 statements compared twice</span><span><svg class="ic"><use href="#i-check"/></svg>14 sums redone</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="desk-col">
+      <p class="cap">Desktop · 1280</p>
+      <div class="browser" id="A-1-desk"><div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">imba.example.com/spawns</span></div>
+        <div class="dtop">E-services tender <span class="tag">tenders · claude-2</span></div>
+        <div class="dfeed">
+          <div class="card">
+            <div class="hd"><span class="nm"><svg class="ic"><use href="#i-doc"/></svg>Document check</span><span class="sp"></span><span class="mt">6 documents · Fable · max</span></div>
+            <div class="edge"></div>
+            <div class="ttl">E-services tender, lot 1</div>
+            <div class="verdict"><span class="v-big">1 decision left</span><span class="v-rest">2 fixed</span>
+              <span class="rounds"><i class="rd done"></i><i class="rd clean"></i><i class="rd left"></i><span class="rl">nothing new in round 2 of 3</span></span></div>
+            <div class="dec">
+              <div class="eb">Delivery period</div>
+              <div class="slips">
+                <div class="slip">“We will deliver the complete platform, including data migration and staff training, within <mark class="a">eight months</mark> of signing the contract.”<div class="src"><b>Technical proposal · §5.1</b><span>p. 18</span></div></div>
+                <div class="or">or</div>
+                <div class="slip">“The prices above cover <mark class="a">ten months</mark> of implementation work, followed by the warranty period.”<div class="src"><b>Price offer</b><span>p. 2</span></div></div>
+              </div>
+              <div class="note"><svg class="ic"><use href="#i-ref"/></svg><span>Terms of reference §3.2 allows up to twelve months.</span></div>
+            </div>
+            <div class="band"><div class="eb">Fixed and checked again</div>
+              <div class="fix"><svg class="ic"><use href="#i-check"/></svg><span class="s">Offer validity</span><span class="chg"><s>90</s><span class="arrow">→</span><span class="new">120 days</span></span><span class="w">Technical proposal · p. 3 · as Terms of reference §7.4</span></div>
+              <div class="fix"><svg class="ic"><use href="#i-check"/></svg><span class="s">Total price</span><span class="chg"><s>468,000</s><span class="arrow">→</span><span class="new">BGN 486,000</span></span><span class="w">Technical proposal · p. 31 · as the price table adds up</span></div>
+            </div>
+            <div class="foot"><span><svg class="ic"><use href="#i-check"/></svg>144 of 144 pages read</span><span><svg class="ic"><use href="#i-check"/></svg>612 statements compared twice</span><span><svg class="ic"><use href="#i-check"/></svg>checked against 2 client documents</span><span><svg class="ic"><use href="#i-check"/></svg>14 sums redone</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="state">
+  <div class="state-label"><i>2</i>Clean <small>a whole round found nothing new</small></div>
+  <div class="pair">
+    <div class="phone-col">
+      <p class="cap">Phone · 390</p>
+      <div class="phone" id="A-2-phone"><div class="ptop"><svg class="ic"><use href="#i-back"/></svg>E-services tender</div>
+        <div class="pfeed ph">
+          <div class="card t-ok">
+            <div class="hd"><span class="nm"><svg class="ic"><use href="#i-doc"/></svg>Document check</span><span class="sp"></span><span class="mt">Fable · max</span></div>
+            <div class="edge"></div>
+            <div class="ttl">E-services tender, lot 1</div>
+            <div class="verdict"><span class="v-big">No contradictions</span><span class="v-rest">3 fixed</span>
+              <span class="rounds"><i class="rd done"></i><i class="rd clean"></i><i class="rd left"></i><span class="rl">clean in round 2 of 3</span></span></div>
+            <div class="band"><div class="eb">Fixed and checked again</div>
+              <div class="fix"><svg class="ic"><use href="#i-check"/></svg><span class="s">Delivery period</span><span class="chg"><s>eight</s><span class="arrow">→</span><span class="new">ten months</span></span><span class="w">Technical proposal · p. 18</span></div>
+              <div class="fix"><svg class="ic"><use href="#i-check"/></svg><span class="s">Offer validity</span><span class="chg"><s>90</s><span class="arrow">→</span><span class="new">120 days</span></span><span class="w">Technical proposal · p. 3</span></div>
+              <div class="fix"><svg class="ic"><use href="#i-check"/></svg><span class="s">Total price</span><span class="chg"><s>468,000</s><span class="arrow">→</span><span class="new">BGN 486,000</span></span><span class="w">Technical proposal · p. 31</span></div>
+            </div>
+            <div class="foot"><span><svg class="ic"><use href="#i-check"/></svg>144 of 144 pages read</span><span><svg class="ic"><use href="#i-check"/></svg>612 statements compared twice</span><span><svg class="ic"><use href="#i-check"/></svg>14 sums redone</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="desk-col">
+      <p class="cap">Desktop · 1280</p>
+      <div class="browser" id="A-2-desk"><div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">imba.example.com/spawns</span></div>
+        <div class="dtop">E-services tender <span class="tag">tenders · claude-2</span></div>
+        <div class="dfeed">
+          <div class="card t-ok">
+            <div class="hd"><span class="nm"><svg class="ic"><use href="#i-doc"/></svg>Document check</span><span class="sp"></span><span class="mt">6 documents · Fable · max</span></div>
+            <div class="edge"></div>
+            <div class="ttl">E-services tender, lot 1</div>
+            <div class="verdict"><span class="v-big">No contradictions</span><span class="v-rest">3 fixed</span>
+              <span class="rounds"><i class="rd done"></i><i class="rd clean"></i><i class="rd left"></i><span class="rl">clean in round 2 of 3</span></span></div>
+            <div class="band"><div class="eb">Fixed and checked again</div>
+              <div class="fix"><svg class="ic"><use href="#i-check"/></svg><span class="s">Delivery period</span><span class="chg"><s>eight</s><span class="arrow">→</span><span class="new">ten months</span></span><span class="w">Technical proposal · p. 18 · your decision</span></div>
+              <div class="fix"><svg class="ic"><use href="#i-check"/></svg><span class="s">Offer validity</span><span class="chg"><s>90</s><span class="arrow">→</span><span class="new">120 days</span></span><span class="w">Technical proposal · p. 3 · as Terms of reference §7.4</span></div>
+              <div class="fix"><svg class="ic"><use href="#i-check"/></svg><span class="s">Total price</span><span class="chg"><s>468,000</s><span class="arrow">→</span><span class="new">BGN 486,000</span></span><span class="w">Technical proposal · p. 31 · as the price table adds up</span></div>
+            </div>
+            <div class="foot"><span><svg class="ic"><use href="#i-check"/></svg>144 of 144 pages read</span><span><svg class="ic"><use href="#i-check"/></svg>612 statements compared twice</span><span><svg class="ic"><use href="#i-check"/></svg>checked against 2 client documents</span><span><svg class="ic"><use href="#i-check"/></svg>14 sums redone</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="state">
+  <div class="state-label"><i>3</i>Round limit reached <small>a fixed clash came back in the last round</small></div>
+  <div class="pair">
+    <div class="phone-col">
+      <p class="cap">Phone · 390</p>
+      <div class="phone" id="A-3-phone"><div class="ptop"><svg class="ic"><use href="#i-back"/></svg>E-services tender</div>
+        <div class="pfeed ph">
+          <div class="card t-err">
+            <div class="hd"><span class="nm"><svg class="ic"><use href="#i-doc"/></svg>Document check</span><span class="sp"></span><span class="mt">Fable · max</span></div>
+            <div class="edge"></div>
+            <div class="ttl">E-services tender, lot 1</div>
+            <div class="verdict"><span class="v-big">Not clean</span><span class="v-rest">1 open · 2 fixed</span>
+              <span class="rounds"><i class="rd done"></i><i class="rd done"></i><i class="rd fail"></i><span class="rl">limit of 3 rounds reached</span></span></div>
+            <div class="dec">
+              <div class="eb">Key experts</div>
+              <div class="slips">
+                <div class="slip">“Our team is led by <mark class="r">nine</mark> key experts.”<div class="src"><b>Technical proposal</b><span>p. 12</span></div></div>
+                <div class="or">against</div>
+                <div class="slip">“Fees cover <mark class="r">seven</mark> key experts.”<div class="src"><b>Price offer</b><span>p. 3</span></div></div>
+              </div>
+              <div class="note bad"><svg class="ic"><use href="#i-x"/></svg><span>Fixed in round 2, back in round 3 in the team chart on p. 14.</span></div>
+            </div>
+            <div class="foot"><span><svg class="ic"><use href="#i-check"/></svg>144 of 144 pages read</span><span><svg class="ic"><use href="#i-check"/></svg>612 statements compared twice</span><span><svg class="ic"><use href="#i-check"/></svg>14 sums redone</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="desk-col">
+      <p class="cap">Desktop · 1280</p>
+      <div class="browser" id="A-3-desk"><div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">imba.example.com/spawns</span></div>
+        <div class="dtop">E-services tender <span class="tag">tenders · claude-2</span></div>
+        <div class="dfeed">
+          <div class="card t-err">
+            <div class="hd"><span class="nm"><svg class="ic"><use href="#i-doc"/></svg>Document check</span><span class="sp"></span><span class="mt">6 documents · Fable · max</span></div>
+            <div class="edge"></div>
+            <div class="ttl">E-services tender, lot 1</div>
+            <div class="verdict"><span class="v-big">Not clean</span><span class="v-rest">1 open · 2 fixed</span>
+              <span class="rounds"><i class="rd done"></i><i class="rd done"></i><i class="rd fail"></i><span class="rl">limit of 3 rounds reached</span></span></div>
+            <div class="dec">
+              <div class="eb">Key experts</div>
+              <div class="slips">
+                <div class="slip">“Our team for lot 1 is led by <mark class="r">nine</mark> key experts, each named in the attached CVs.”<div class="src"><b>Technical proposal · §4</b><span>p. 12</span></div></div>
+                <div class="or">against</div>
+                <div class="slip">“Fees cover <mark class="r">seven</mark> key experts for the full implementation period.”<div class="src"><b>Price offer</b><span>p. 3</span></div></div>
+              </div>
+              <div class="note bad"><svg class="ic"><use href="#i-x"/></svg><span>Fixed in round 2, back in round 3 in the team chart on p. 14.</span></div>
+            </div>
+            <div class="foot"><span><svg class="ic"><use href="#i-check"/></svg>144 of 144 pages read</span><span><svg class="ic"><use href="#i-check"/></svg>612 statements compared twice</span><span><svg class="ic"><use href="#i-check"/></svg>checked against 2 client documents</span><span><svg class="ic"><use href="#i-check"/></svg>14 sums redone</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E The receipt · Document check</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mock.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4"/><path d="M14 2v6h6"/><path d="M20 8v3"/><circle cx="16" cy="16" r="3.5"/><path d="m21 21-2.5-2.5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+</svg>
+
+<div class="mock-title"><b>E</b><span>The receipt</span><a href="../index.html#E">Back to the design document</a></div>
+
+<section class="state">
+  <div class="state-label"><i>1</i>Waiting on one decision <small>every step of the run ticked with its count</small></div>
+  <div class="pair">
+    <div class="phone-col">
+      <p class="cap">Phone · 390</p>
+      <div class="phone" id="E-1-phone"><div class="ptop"><svg class="ic"><use href="#i-back"/></svg>E-services tender</div>
+        <div class="pfeed ph">
+          <div class="card">
+            <div class="hd"><span class="nm"><svg class="ic"><use href="#i-doc"/></svg>Document check</span><span class="sp"></span><span class="mt">Fable · max</span></div>
+            <div class="edge"></div>
+            <div class="ttl">E-services tender, lot 1</div>
+            <div class="rc">
+              <div class="ln"><svg class="ic"><use href="#i-check"/></svg><span class="lbl">Pages read</span><span class="lead2"></span><span class="v">144/144</span></div>
+              <div class="ln"><svg class="ic"><use href="#i-check"/></svg><span class="lbl">Compared twice</span><span class="lead2"></span><span class="v">612/612</span></div>
+              <div class="ln"><svg class="ic"><use href="#i-check"/></svg><span class="lbl">Against client</span><span class="lead2"></span><span class="v">612/612</span></div>
+              <div class="ln"><svg class="ic"><use href="#i-check"/></svg><span class="lbl">Sums redone</span><span class="lead2"></span><span class="v">14/14</span></div>
+              <div class="ln"><svg class="ic"><use href="#i-check"/></svg><span class="lbl">Fixed</span><span class="lead2"></span><span class="v">2</span></div>
+              <div class="ln"><svg class="ic"><use href="#i-check"/></svg><span class="lbl">Nothing new</span><span class="lead2"></span><span class="v">round 2</span></div>
+              <div class="ln warn"><svg class="ic"><use href="#i-alert"/></svg><span class="lbl">Your decision</span><span class="lead2"></span><span class="v">1</span></div>
+            </div>
+            <div class="decl"><b>Delivery period:</b> <mark class="a">eight months</mark> <span class="doc">Technical proposal p. 18</span> or <mark class="a">ten months</mark> <span class="doc">Price offer p. 2</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="desk-col">
+      <p class="cap">Desktop · 1280</p>
+      <div class="browser" id="E-1-desk"><div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">imba.example.com/spawns</span></div>
+        <div class="dtop">E-services tender <span class="tag">tenders · claude-2</span></div>
+        <div class="dfeed">
+          <div class="card">
+            <div class="hd"><span class="nm"><svg class="ic"><use href="#i-doc"/></svg>Document check</span><span class="sp"></span><span class="mt">6 documents · Fable · max</span></div>
+            <div class="edge"></div>
+            <div class="ttl">E-services tender, lot 1</div>
+            <div class="rc">
+              <div class="ln"><svg class="ic"><use href="#i-check"/></svg><span class="lbl">Pages read</span><span class="lead2"></span><span class="v">144 of 144</span></div>
+              <div class="ln"><svg class="ic"><use href="#i-check"/></svg><span class="lbl">Statements compared by two hunters</span><span class="lead2"></span><span class="v">612 of 612</span></div>
+              <div class="ln"><svg class="ic"><use href="#i-check"/></svg><span class="lbl">Statements checked against Terms of reference and Draft contract</span><span class="lead2"></span><span class="v">612 of 612</span></div>
+              <div class="ln"><svg class="ic"><use href="#i-check"/></svg><span class="lbl">Sums redone</span><span class="lead2"></span><span class="v">14 of 14</span></div>
+              <div class="ln"><svg class="ic"><use href="#i-check"/></svg><span class="lbl">Fixed: offer validity 90 → 120 days, total price 468,000 → 486,000</span><span class="lead2"></span><span class="v">2</span></div>
+              <div class="ln"><svg class="ic"><use href="#i-check"/></svg><span class="lbl">Every document checked again, nothing new</span><span class="lead2"></span><span class="v">round 2 of 3</span></div>
+              <div class="ln warn"><svg class="ic"><use href="#i-alert"/></svg><span class="lbl">Your decision</span><span class="lead2"></span><span class="v">1</span></div>
+            </div>
+            <div class="decl"><b>Delivery period:</b> “…within <mark class="a">eight months</mark> of signing the contract.” <span class="doc">Technical proposal p. 18</span> &nbsp;or&nbsp; “…cover <mark class="a">ten months</mark> of implementation work.” <span class="doc">Price offer p. 2</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

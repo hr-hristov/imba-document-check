@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Settings · Document check</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mock.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4"/><path d="M14 2v6h6"/><path d="M20 8v3"/><circle cx="16" cy="16" r="3.5"/><path d="m21 21-2.5-2.5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></symbol>
+  <symbol id="i-panel" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+  <symbol id="i-msg" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+  <symbol id="i-scroll" viewBox="0 0 24 24"><path d="M8 4h11v13a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-1h11"/><path d="M8 4a2 2 0 0 0-2 2v10"/></symbol>
+  <symbol id="i-clip" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 3h6v3H9z"/><path d="m9 13 2 2 4-4"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="m3 7 2 2 3-3M3 16l2 2 3-3M11 8h10M11 17h10"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M5 15c-1.5 1.3-2 5-2 5s3.7-.5 5-2"/><path d="M9 15 15 9a8 8 0 0 1 6-6 8 8 0 0 1-6 6l-6 6z"/><path d="m9 11-3 1 3 3 1-3"/></symbol>
+  <symbol id="i-glass" viewBox="0 0 24 24"><path d="M6 3h12M6 21h12M7 3v4l5 5-5 5v4M17 3v4l-5 5 5 5v4"/></symbol>
+  <symbol id="i-term" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M12 15h5"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h11v8H8l-4 3z"/><path d="M15 9h5v8l-3-2h-6v-2"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 21h4"/></symbol>
+  <symbol id="i-tasks" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="m8 12 3 3 5-6"/></symbol>
+  <symbol id="i-news" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></symbol>
+</svg>
+
+<div class="mock-title"><b>S</b><span>Settings, Document check</span><a href="../index.html#settings">Back to the design document</a></div>
+
+<section class="state">
+  <div class="state-label"><i>1</i>The defaults <small>a new page under Spawns, after Rules review</small></div>
+  <div class="pair">
+    <div class="phone-col">
+      <p class="cap">Phone · 390</p>
+      <div class="phone" id="S-1-phone">
+        <div class="pset">
+          <div class="back"><svg class="ic"><use href="#i-back"/></svg>Settings</div>
+          <div class="shd"><div class="tile"><svg class="ic"><use href="#i-doc"/></svg></div><div><div class="g">Spawns</div><h3>Document check</h3></div></div>
+          <div class="box">
+            <div class="row stack"><span class="l">Reviewer</span>
+              <div class="segs">
+                <div class="seg"><span class="on">Claude</span><span>Codex</span></div>
+                <div class="seg"><span>Opus</span><span>Sonnet</span><span class="on">Fable</span></div>
+                <div class="seg"><span>Low</span><span>Med</span><span>High</span><span>XHigh</span><span class="on">Max</span><span>Ultra</span></div>
+              </div>
+            </div>
+            <div class="row stack"><span class="l">Account</span><div class="seg"><span class="on">Best seat</span><span>Host</span><span>claude-1</span><span>claude-2</span></div></div>
+            <div class="row"><span class="l">Readers</span><span class="nin">2</span></div>
+            <div class="row"><span class="l">Hunters</span><span class="nin">3</span></div>
+            <div class="row"><span class="l">Checkers</span><span class="nin">2</span></div>
+            <div class="row"><span class="l">Round limit</span><span class="nin">3</span></div>
+            <div class="row"><span class="l">Automatic fix</span><span class="sw"></span></div>
+            <div class="row"><span class="l">Keep one-hunter finds</span><span class="sw"></span></div>
+          </div>
+          <div class="part"><span>Documents</span></div>
+          <div class="box">
+            <div class="row stack"><span class="l">Scope</span><div class="seg"><span class="on">Whole folder</span><span>Subfolder</span></div></div>
+            <div class="row"><span class="l">File types</span><span class="tin">docx, pdf, odt, md, txt</span></div>
+            <div class="row"><span class="l">Skip</span><span class="tin">Archive/</span></div>
+            <div class="row"><span class="l">Document limit</span><span class="nin">60</span></div>
+          </div>
+          <div class="part"><span>Client documents</span><span class="btn"><svg class="ic"><use href="#i-plus"/></svg>Add</span></div>
+          <div class="box">
+            <div class="refr"><span class="o">1</span><span class="f">Terms of reference.pdf</span><svg class="ic"><use href="#i-x"/></svg></div>
+            <div class="refr"><span class="o">2</span><span class="f">Draft contract.pdf</span><svg class="ic"><use href="#i-x"/></svg></div>
+            <div class="row stack"><span class="l">Reference check</span><div class="seg"><span>Off</span><span>Clashes</span><span class="on">Every statement</span></div></div>
+            <div class="row"><span class="l">Redo sums</span><span class="sw"></span></div>
+          </div>
+          <div class="part"><span>Look for</span></div>
+          <div class="box">
+            <div class="row"><span class="l">Figures</span><span class="sw"></span></div>
+            <div class="row"><span class="l">Dates</span><span class="sw"></span></div>
+            <div class="row"><span class="l">Duties</span><span class="sw"></span></div>
+            <div class="row"><span class="l">Scope</span><span class="sw"></span></div>
+            <div class="row"><span class="l">Names</span><span class="sw"></span></div>
+            <div class="row"><span class="l">Logic</span><span class="sw"></span></div>
+          </div>
+        </div>
+        <div class="pnav"><svg class="ic"><use href="#i-term"/></svg><svg class="ic"><use href="#i-chat"/></svg><svg class="ic"><use href="#i-bell"/></svg><svg class="ic"><use href="#i-tasks"/></svg><svg class="ic"><use href="#i-news"/></svg><svg class="ic on"><use href="#i-gear"/></svg></div>
+      </div>
+    </div>
+    <div class="desk-col">
+      <p class="cap">Desktop · 1280</p>
+      <div class="browser" id="S-1-desk">
+        <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">imba.example.com/settings/document-check</span></div>
+        <div class="sdesk">
+          <div class="srail">
+            <div class="srail-h"><svg class="ic"><use href="#i-panel"/></svg>Settings</div>
+            <div class="search"><svg class="ic"><use href="#i-search"/></svg>Search settings</div>
+            <div class="grp">Spawns</div>
+            <div class="ri"><span class="ib"><svg class="ic"><use href="#i-folder"/></svg></span>Repositories</div>
+            <div class="ri"><span class="ib"><svg class="ic"><use href="#i-msg"/></svg></span>Reports</div>
+            <div class="ri"><span class="ib"><svg class="ic"><use href="#i-scroll"/></svg></span>Prompts</div>
+            <div class="ri"><span class="ib"><svg class="ic"><use href="#i-clip"/></svg></span>Manual test</div>
+            <div class="ri"><span class="ib"><svg class="ic"><use href="#i-list"/></svg></span>Rules review</div>
+            <div class="ri on"><span class="ib"><svg class="ic"><use href="#i-doc"/></svg></span>Document check</div>
+            <div class="ri"><span class="ib"><svg class="ic"><use href="#i-rocket"/></svg></span>Agent spawns</div>
+            <div class="ri"><span class="ib"><svg class="ic"><use href="#i-glass"/></svg></span>Usage limits</div>
+          </div>
+          <div class="detail">
+            <div class="shd"><div class="tile"><svg class="ic"><use href="#i-doc"/></svg></div><div><div class="g">Spawns</div><h3>Document check</h3></div></div>
+            <div class="box">
+              <div class="row top"><span class="l">Reviewer</span>
+                <div class="segs">
+                  <div class="seg"><span class="on">Claude</span><span>Codex</span></div>
+                  <div class="seg"><span>Opus</span><span>Sonnet</span><span class="on">Fable</span></div>
+                  <div class="seg"><span>Low</span><span>Med</span><span>High</span><span>XHigh</span><span class="on">Max</span><span>Ultra</span></div>
+                </div>
+              </div>
+              <div class="row"><span class="l">Account</span><div class="seg"><span class="on">Best seat</span><span>Host</span><span>claude-1</span><span>claude-2</span></div></div>
+              <div class="row"><span class="l">Readers</span><span class="nin">2</span></div>
+              <div class="row"><span class="l">Hunters</span><span class="nin">3</span></div>
+              <div class="row"><span class="l">Checkers</span><span class="nin">2</span></div>
+              <div class="row"><span class="l">Round limit</span><span class="nin">3</span></div>
+              <div class="row"><span class="l">Automatic fix</span><span class="sw"></span></div>
+              <div class="row"><span class="l">Keep one-hunter finds</span><span class="sw"></span></div>
+            </div>
+            <div class="part"><span>Documents</span></div>
+            <div class="box">
+              <div class="row"><span class="l">Scope</span><div class="seg"><span class="on">Whole folder</span><span>Subfolder</span></div></div>
+              <div class="row"><span class="l">File types</span><span class="tin">docx, pdf, odt, md, txt</span></div>
+              <div class="row"><span class="l">Skip</span><span class="tin">Archive/</span></div>
+              <div class="row"><span class="l">Document limit</span><span class="nin">60</span></div>
+            </div>
+            <div class="part"><span>Client documents</span><span class="btn"><svg class="ic"><use href="#i-plus"/></svg>Add</span></div>
+            <div class="box">
+              <div class="refr"><span class="o">1</span><span class="f">Terms of reference.pdf</span><svg class="ic"><use href="#i-x"/></svg></div>
+              <div class="refr"><span class="o">2</span><span class="f">Draft contract.pdf</span><svg class="ic"><use href="#i-x"/></svg></div>
+              <div class="row"><span class="l">Reference check</span><div class="seg"><span>Off</span><span>Clashes</span><span class="on">Every statement</span></div></div>
+              <div class="row"><span class="l">Redo sums</span><span class="sw"></span></div>
+            </div>
+            <div class="part"><span>Look for</span></div>
+            <div class="box">
+              <div class="row"><span class="l">Figures</span><span class="sw"></span></div>
+              <div class="row"><span class="l">Dates</span><span class="sw"></span></div>
+              <div class="row"><span class="l">Duties</span><span class="sw"></span></div>
+              <div class="row"><span class="l">Scope</span><span class="sw"></span></div>
+              <div class="row"><span class="l">Names</span><span class="sw"></span></div>
+              <div class="row"><span class="l">Logic</span><span class="sw"></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="dnav"><span><svg class="ic"><use href="#i-term"/></svg>Spawns</span><span><svg class="ic"><use href="#i-chat"/></svg>Automations</span><span><svg class="ic"><use href="#i-bell"/></svg>Alarms</span><span><svg class="ic"><use href="#i-tasks"/></svg>Tasks</span><span class="rt on"><svg class="ic"><use href="#i-gear"/></svg>Settings</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
