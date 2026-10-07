@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Document check</title>
-<meta name="description" content="Design document for Document check in imba: AI reviewers read a tender's documents, find statements that contradict each other or the client's documents, fix what can be settled, and check again in rounds until clean.">
+<meta name="description" content="Design document for Document check in imba: AI reviewers read a set of business documents before delivery, find statements that contradict each other or the reference documents, fix what can be settled, and check again in rounds until clean.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -71,6 +71,10 @@ h2 { font: 800 clamp(26px, 3.4vw, 38px)/1.15 var(--mono); letter-spacing: -.02em
 .brief div { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 18px 20px 20px; }
 .brief b { display: block; font: 700 13px var(--mono); margin-bottom: 6px; }
 .brief span { color: var(--muted-ink); font-size: 15px; line-height: 1.5; display: block; }
+.kinds { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 26px; }
+.kinds div { border-top: 3px solid var(--ink); padding-top: 12px; }
+.kinds b { display: block; font: 700 14px var(--mono); margin-bottom: 6px; }
+.kinds span { display: block; font: 16px/1.5 var(--serif); }
 
 /* The round */
 .steps { list-style: none; padding: 0; margin: 30px 0 0; border-left: 3px solid var(--ink); }
@@ -202,7 +206,7 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
 
 @media (max-width: 980px) {
   .grid { grid-template-columns: repeat(2, 1fr); }
-  .brief { grid-template-columns: 1fr 1fr; }
+  .brief, .kinds { grid-template-columns: 1fr 1fr; }
   .stp { grid-template-columns: 60px minmax(0, 1fr); }
   .stp .gate { grid-column: 2; }
   .loopwrap, .fixwrap { grid-template-columns: 1fr; }
@@ -216,7 +220,7 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
   .compare { grid-template-columns: 1fr; }
   .compare > div + div { border-left: 0; border-top: 1px solid var(--rule); }
   .quote { font-size: 17px; }
-  .brief, .grid, .ends, .sure, .notes { grid-template-columns: 1fr; }
+  .brief, .kinds, .grid, .ends, .sure, .notes { grid-template-columns: 1fr; }
   .sure div + div, .notes div + div { border-left: 0; border-top: 1px solid var(--rule); }
   .stp { grid-template-columns: 1fr; padding-left: 16px; }
   .stp .n { padding-left: 0; font-size: 26px; }
@@ -238,6 +242,7 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
     <span>imba</span>
     <span class="crumb">/ design document</span>
     <nav>
+      <a href="#where">Where</a>
       <a href="#round">The round</a>
       <a href="#rounds">Rounds</a>
       <a href="#start">Start</a>
@@ -252,21 +257,39 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
 <section class="hero">
   <div class="wrap">
     <p class="kicker">Document check &middot; design document</p>
-    <h1>Catch the bid that <span class="now">contradicts itself</span></h1>
-    <p class="lede">imba is an app for running AI agents. Each agent works in a chat, called a spawn, inside one folder of files. A tender bid is such a folder: a technical proposal, a price offer, CVs and declarations, next to the client's terms of reference and draft contract.</p>
-    <p class="lede">Several people write those documents over several weeks, and they drift apart. Document check is a new command that reads every page, finds statements that cannot both be true, fixes what the client's documents settle, and checks every document again in rounds until one comes back clean.</p>
+    <h1>Catch the <span class="now">contradiction</span> before the client does</h1>
+    <p class="lede">imba is an app for running AI agents. Each agent works in a chat, called a spawn, inside one folder of files. Most documents a business delivers live in such a folder: a final report with its budget and annexes, a tender bid, an annual report, a policy set, next to the contract or brief they must agree with.</p>
+    <p class="lede">Several people write those documents over several weeks, and they drift apart. Document check is a new command that reads every page, finds statements that cannot both be true, fixes what the reference documents settle, and checks every document again in rounds until one comes back clean.</p>
 
     <div class="compare">
       <div>
-        <h3><span>Technical proposal</span><span>page 18</span></h3>
-        <p class="quote">&ldquo;We will deliver the complete platform, including data migration and staff training, within <mark>eight months</mark> of signing the contract.&rdquo;</p>
+        <h3><span>Final report</span><span>page 18</span></h3>
+        <p class="quote">&ldquo;The complete portal, including data migration and staff training, was delivered within <mark>eight months</mark> of signing the contract.&rdquo;</p>
       </div>
       <div>
-        <h3><span>Price offer</span><span>page 2</span></h3>
-        <p class="quote">&ldquo;The prices above cover <mark>ten months</mark> of implementation work, followed by the warranty period.&rdquo;</p>
+        <h3><span>Budget</span><span>page 2</span></h3>
+        <p class="quote">&ldquo;The amounts above cover <mark>ten months</mark> of implementation work, followed by the warranty period.&rdquo;</p>
       </div>
-      <div class="verdict-line">Both can be sent to the client today. Only one can be true.</div>
+      <div class="verdict-line">Both can go to the client today. Only one can be true.</div>
     </div>
+  </div>
+</section>
+
+<section class="section" id="where">
+  <div class="wrap">
+    <h2>Any set of documents that goes out</h2>
+    <p>The check reads prose, not code, and it works on any set of business documents that must agree with each other before delivery. A few of the sets it is meant for, each with the kind of clash it catches:</p>
+    <div class="kinds">
+      <div><b>Client deliverables</b><span>The final report says the work took eight months. Its budget covers ten.</span></div>
+      <div><b>Tender bids</b><span>The technical proposal names nine key experts. The price offer pays for seven.</span></div>
+      <div><b>Annual and board reports</b><span>The chair's letter says revenue grew 12 percent. The accounts show 9.</span></div>
+      <div><b>Proposals and statements of work</b><span>The proposal includes staff training. The statement of work leaves it out.</span></div>
+      <div><b>Due diligence and audit reports</b><span>The summary calls a lease expired. The annex lists it as running to 2028.</span></div>
+      <div><b>Policies and procedures</b><span>The policy asks for two signatures on a payment. The procedure asks for one.</span></div>
+      <div><b>Grant applications</b><span>The work plan runs 24 months. The budget pays the staff for 18.</span></div>
+      <div><b>Contracts and their annexes</b><span>The contract says payment within 30 days. The payment annex says 45.</span></div>
+    </div>
+    <p style="margin-top:22px">The documents the set must agree with, such as the contract, the statement of work, the client's brief or terms of reference, are its <b>reference documents</b>. They decide which side of a clash is wrong.</p>
   </div>
 </section>
 
@@ -275,7 +298,7 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
     <h2>What was asked</h2>
     <p>A check like imba's code review, which sends several read-only AI reviewers over a change and confirms what they find. This one reads business documents instead of code.</p>
     <div class="brief">
-      <div><b>Business documents and tenders</b><span>Proposals, price offers, contracts, CVs and terms of reference. Prose, in Word and PDF.</span></div>
+      <div><b>Business documents to be delivered</b><span>Reports, proposals, bids, contracts, plans, policies and CVs. Prose, in Word and PDF.</span></div>
       <div><b>Every statement</b><span>Each checkable statement is pulled out with its quote and page, then compared with every other statement on the same subject.</span></div>
       <div><b>Several reviewers</b><span>Seven read-only reviewers in each round, and every subject is compared by two of them.</span></div>
       <div><b>Guaranteed to finish the work</b><span>imba checks each step itself before the next starts. A skipped page or a silent reviewer stops the round.</span></div>
@@ -302,7 +325,7 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
       </li>
       <li class="stp">
         <span class="n">2</span>
-        <div><h3>List the statements <small>2 readers</small></h3><p>The documents are split into two even batches. Each reader lists every checkable statement in its batch: the sentence word for word, its page, the claim in one plain line, and its subject, such as &ldquo;offer validity&rdquo; or &ldquo;delivery period&rdquo;.</p></div>
+        <div><h3>List the statements <small>2 readers</small></h3><p>The documents are split into two even batches. Each reader lists every checkable statement in its batch: the sentence word for word, its page, the claim in one plain line, and its subject, such as &ldquo;warranty&rdquo; or &ldquo;delivery period&rdquo;.</p></div>
         <div class="gate"><b>imba checks</b>Every quote is found on its page. A quote that is not there is dropped.</div>
       </li>
       <li class="stp">
@@ -312,7 +335,7 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
       </li>
       <li class="stp">
         <span class="n">4</span>
-        <div><h3>Check against the client <small>2 checkers</small></h3><p>Checkers test every statement against the client's documents and answer holds, wrong or cannot tell, citing the page that decides. They also redo every total and percentage, and every figure written out in words.</p></div>
+        <div><h3>Check against the references <small>2 checkers</small></h3><p>Checkers test every statement against the reference documents and answer holds, wrong or cannot tell, citing the page that decides. They also redo every total and percentage, and every figure written out in words.</p></div>
         <div class="gate"><b>imba checks</b>Every statement has an answer. imba adds up each sum itself, so a model's arithmetic never decides alone.</div>
       </li>
       <li class="stp">
@@ -322,7 +345,7 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
       </li>
       <li class="stp">
         <span class="n">6</span>
-        <div><h3>Fix <small>the spawn's agent</small></h3><p>Where a client's document or a redone sum shows which side is wrong, the agent rewrites that side in the document's own words. A clash nothing settles is never edited. It goes to the operator with both statements and a recommended answer.</p></div>
+        <div><h3>Fix <small>the spawn's agent</small></h3><p>Where a reference document or a redone sum shows which side is wrong, the agent rewrites that side in the document's own words. A clash nothing settles is never edited. It goes to the operator with both statements and a recommended answer.</p></div>
         <div class="gate"><b>imba checks</b>Every change is found in its file afterwards.</div>
       </li>
     </ol>
@@ -333,7 +356,7 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
 <section class="section" id="rounds">
   <div class="wrap">
     <h2>Rounds until clean</h2>
-    <p>A fix can start a new clash: correcting the total price on page 31 can break a sum on page 33. So after any fix, the next round reads every document again from the start, not only the changed pages. The run ends when a round finds nothing new, or when the round limit is reached.</p>
+    <p>A fix can start a new clash: correcting the total cost on page 31 can break a sum on page 33. So after any fix, the next round reads every document again from the start, not only the changed pages. The run ends when a round finds nothing new, or when the round limit is reached.</p>
     <div class="loopwrap">
       <div class="loop">
         <svg viewBox="0 0 640 260" role="img" aria-label="A round runs, then either fixes and runs again, ends clean, or stops at the round limit">
@@ -366,12 +389,12 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
     </div>
     <div class="ends">
       <div class="end e-ok"><b>Clean after 2 rounds</b><p>A whole round found nothing new, and nothing waits on the operator.</p></div>
-      <div class="end e-am"><b>1 decision left</b><p>Nothing new in the last round, but a clash the client's documents cannot settle waits on the operator.</p></div>
+      <div class="end e-am"><b>1 decision left</b><p>Nothing new in the last round, but a clash the reference documents cannot settle waits on the operator.</p></div>
       <div class="end e-no"><b>Not clean after 3 rounds</b><p>The last allowed round still found something. The card shows what and on which pages.</p></div>
     </div>
     <p style="margin-top:34px">Each clash carries one word for how sure the run is. imba works the word out from the records; the agent never chooses it.</p>
     <div class="sure">
-      <div><b>proven</b><p>A client's document or a redone sum shows one side wrong.</p></div>
+      <div><b>proven</b><p>A reference document or a redone sum shows one side wrong.</p></div>
       <div><b>sure</b><p>Both hunters found it and the agent confirmed it.</p></div>
       <div><b>likely</b><p>One hunter found it and the agent confirmed it. Dropped when Keep one-hunter finds is off.</p></div>
     </div>
@@ -381,20 +404,20 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
 <section class="section" id="start">
   <div class="wrap">
     <h2>Starting a run</h2>
-    <p>The operator types <code>/rd</code>, short for review documents, in a spawn working in the bid's folder. Words after it change that one run only; the saved settings stay as they are.</p>
+    <p>The operator types <code>/rd</code>, short for review documents, in a spawn working in the documents' folder. Words after it change that one run only; the saved settings stay as they are.</p>
     <div class="tablewrap">
       <table>
         <thead><tr><th>Typed</th><th>What the run does</th></tr></thead>
         <tbody>
           <tr><td class="cmd">/rd</td><td>Checks every document in the folder with the saved settings.</td></tr>
-          <tr><td class="cmd">/rd lot-1/</td><td>Checks one subfolder.</td></tr>
-          <tr><td class="cmd">/rd "Price offer.docx" "Technical proposal.docx"</td><td>Checks only the named files.</td></tr>
-          <tr><td class="cmd">/rd against "Terms of reference.pdf"</td><td>Uses that document as the client's for this run.</td></tr>
+          <tr><td class="cmd">/rd phase-1/</td><td>Checks one subfolder.</td></tr>
+          <tr><td class="cmd">/rd "Final report.docx" "Budget.docx"</td><td>Checks only the named files.</td></tr>
+          <tr><td class="cmd">/rd against "Statement of work.pdf"</td><td>Uses that document as the reference for this run.</td></tr>
           <tr><td class="cmd">/rd rounds 6</td><td>Allows up to six rounds.</td></tr>
           <tr><td class="cmd">/rd 4</td><td>Runs four hunters.</td></tr>
           <tr><td class="cmd">/rd codex</td><td>Runs every reviewer on Codex.</td></tr>
           <tr><td class="cmd">/rd plan</td><td>Edits nothing and ends with a fix plan.</td></tr>
-          <tr><td class="cmd">/rd noref</td><td>Skips the check against the client's documents.</td></tr>
+          <tr><td class="cmd">/rd noref</td><td>Skips the check against the reference documents.</td></tr>
         </tbody>
       </table>
     </div>
@@ -404,7 +427,7 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
 <section class="section" id="fixing">
   <div class="wrap">
     <h2>What gets fixed</h2>
-    <p>Automatic fix is on by default, and only for clashes a client's document or a redone sum settles. Every fix is checked by the next full round like any other statement.</p>
+    <p>Automatic fix is on by default, and only for clashes a reference document or a redone sum settles. Every fix is checked by the next full round like any other statement.</p>
     <div class="fixwrap">
       <ul class="fixlist">
         <li class="w"><b>Word files</b>A tracked change by &ldquo;imba&rdquo;, which the author accepts or rejects in Word. imba refuses the change when the old words are missing from the page or appear on it twice.</li>
@@ -413,15 +436,15 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
         <li class="o"><b>A clash nothing settles</b>Never edited. Both statements go to the operator with the agent's recommended answer.</li>
       </ul>
       <div class="word" aria-label="A Word page with imba's tracked change">
-        <div class="wbar"><b>Technical proposal.docx</b><span>Review</span><span>Track Changes: On</span></div>
+        <div class="wbar"><b>Final report.docx</b><span>Review</span><span>Track Changes: On</span></div>
         <div class="pg">
-          <h4>1.3 Validity of the offer</h4>
-          <p>This offer remains valid for <del>90 days</del><ins>120 days</ins> from the deadline for submission of offers.</p>
-          <p class="dim">The bidder accepts that the contracting authority may request an extension of the validity period in writing.</p>
+          <h4>1.3 Warranty</h4>
+          <p>All delivered components carry a warranty of <del>12 months</del><ins>24 months</ins> from the date of acceptance.</p>
+          <p class="dim">Defects reported within the warranty period are corrected at no cost to the client.</p>
         </div>
         <div class="bl">
-          <div class="balloon"><b>imba &middot; Deleted</b>90 days</div>
-          <div class="balloon"><b>imba &middot; Inserted</b>120 days</div>
+          <div class="balloon"><b>imba &middot; Deleted</b>12 months</div>
+          <div class="balloon"><b>imba &middot; Inserted</b>24 months</div>
         </div>
         <div class="pn">Page 3</div>
       </div>
@@ -447,18 +470,18 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
           <tr><td class="k">Account</td><td class="d">Best seat</td><td>The login the reviewers use: the best free seat, the host's own, or a named one.</td></tr>
           <tr><td class="k">Readers</td><td class="d">2</td><td>How many reviewers list the statements.</td></tr>
           <tr><td class="k">Hunters</td><td class="d">3</td><td>How many compare them. Each subject always goes to two.</td></tr>
-          <tr><td class="k">Checkers</td><td class="d">2</td><td>How many test statements against the client's documents and redo the sums.</td></tr>
+          <tr><td class="k">Checkers</td><td class="d">2</td><td>How many test statements against the reference documents and redo the sums.</td></tr>
           <tr><td class="k">Round limit</td><td class="d">3</td><td>The most rounds a run may take, from 1 to 20.</td></tr>
-          <tr><td class="k">Automatic fix</td><td class="d">On</td><td>Fixes what a client's document or a sum settles. Off ends with a fix plan.</td></tr>
+          <tr><td class="k">Automatic fix</td><td class="d">On</td><td>Fixes what a reference document or a sum settles. Off ends with a fix plan.</td></tr>
           <tr><td class="k">Keep one-hunter finds</td><td class="d">On</td><td>Keeps clashes only one hunter found, marked likely.</td></tr>
           <tr class="grp"><td colspan="3">Documents</td></tr>
           <tr><td class="k">Scope</td><td class="d">Whole folder</td><td>The spawn's whole folder, or one subfolder.</td></tr>
           <tr><td class="k">File types</td><td class="d">docx, pdf, odt, md, txt</td><td>Which files count as documents.</td></tr>
           <tr><td class="k">Skip</td><td class="d">empty</td><td>Paths never read, such as an archive folder.</td></tr>
           <tr><td class="k">Document limit</td><td class="d">60</td><td>Above it the run stops and says how many it found.</td></tr>
-          <tr class="grp"><td colspan="3">Client documents</td></tr>
-          <tr><td class="k">The list</td><td class="d">empty</td><td>The client's documents in order; a higher one wins when two disagree. Empty means the readers mark them.</td></tr>
-          <tr><td class="k">Reference check</td><td class="d">Every statement</td><td>Off, clashes only, or every statement checked against the client.</td></tr>
+          <tr class="grp"><td colspan="3">Reference documents</td></tr>
+          <tr><td class="k">The list</td><td class="d">empty</td><td>The contract, statement of work, brief or terms of reference, in order; a higher one wins when two disagree. Empty means the readers mark them.</td></tr>
+          <tr><td class="k">Reference check</td><td class="d">Every statement</td><td>Off, clashes only, or every statement checked against the references.</td></tr>
           <tr><td class="k">Redo sums</td><td class="d">On</td><td>Recomputes every total, percentage and figure in words.</td></tr>
           <tr class="grp"><td colspan="3">Look for</td></tr>
           <tr><td class="k">Figures</td><td class="d">On</td><td>Two amounts or quantities for one thing, or a figure that differs from its words.</td></tr>
@@ -476,19 +499,19 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
 <section class="section" id="looks">
   <div class="wrap">
     <h2>Six looks for the card</h2>
-    <p>The card arrives in the chat under the agent's reply when the run ends. Every look shows the same run of the same bid: two clashes fixed, one left for the operator, and nothing new in round 2 of 3. Each one shows the clash itself, not only its counts.</p>
+    <p>The card arrives in the chat under the agent's reply when the run ends. Every look shows the same run on one client delivery: two clashes fixed, one left for the operator, and nothing new in round 2 of 3. Each one shows the clash itself, not only its counts.</p>
     <div class="grid">
       <a class="tile" href="#A"><div class="shot"><img src="img/A-1-desk.webp" width="2200" height="924" alt="A Verdict first in the chat" loading="lazy"></div><div class="cap"><span class="id">A</span><span><span class="nm">Verdict first</span> <span class="rec">recommended</span><span class="ln">The answer large, then the clash on two slips.</span></span></div></a>
       <a class="tile" href="#B"><div class="shot"><img src="img/B-1-desk.webp" width="2200" height="840" alt="B Every page in the chat" loading="lazy"></div><div class="cap"><span class="id">B</span><span><span class="nm">Every page</span><span class="ln">Each document a strip of pages, the trouble marked.</span></span></div></a>
       <a class="tile" href="#C"><div class="shot"><img src="img/C-1-desk.webp" width="2200" height="724" alt="C The rounds in the chat" loading="lazy"></div><div class="cap"><span class="id">C</span><span><span class="nm">The rounds</span><span class="ln">The run told round by round.</span></span></div></a>
-      <a class="tile" href="#D"><div class="shot"><img src="img/D-1-desk.webp" width="2200" height="844" alt="D The two pages in the chat" loading="lazy"></div><div class="cap"><span class="id">D</span><span><span class="nm">The two pages</span><span class="ln">Both sentences in place on their pages.</span></span></div></a>
+      <a class="tile" href="#D"><div class="shot"><img src="img/D-1-desk.webp" width="2200" height="878" alt="D The two pages in the chat" loading="lazy"></div><div class="cap"><span class="id">D</span><span><span class="nm">The two pages</span><span class="ln">Both sentences in place on their pages.</span></span></div></a>
       <a class="tile" href="#E"><div class="shot"><img src="img/E-1-desk.webp" width="2200" height="766" alt="E The receipt in the chat" loading="lazy"></div><div class="cap"><span class="id">E</span><span><span class="nm">The receipt</span><span class="ln">Every step ticked with its count.</span></span></div></a>
-      <a class="tile" href="#F"><div class="shot"><img src="img/F-1-desk.webp" width="2200" height="614" alt="F The memo in the chat" loading="lazy"></div><div class="cap"><span class="id">F</span><span><span class="nm">The memo</span><span class="ln">A short note to the bid manager.</span></span></div></a>
+      <a class="tile" href="#F"><div class="shot"><img src="img/F-1-desk.webp" width="2200" height="614" alt="F The memo in the chat" loading="lazy"></div><div class="cap"><span class="id">F</span><span><span class="nm">The memo</span><span class="ln">A short note to the document owner.</span></span></div></a>
     </div>
 
     <article class="design" id="A">
       <div class="dhead"><span class="id">A</span><h3>Verdict first</h3><span class="rec">recommended</span><a class="open" href="designs/A.html">Open the full design &rarr;</a></div>
-      <p class="idea">The verdict comes first, large, in the colour of the ending. Under it the decision left, with both statements quoted on two slips and the client's line that could not settle it. Fixes follow as old value to new, and the last line says what was checked.</p>
+      <p class="idea">The verdict comes first, large, in the colour of the ending. Under it the decision left, with both statements quoted on two slips and the reference line that could not settle it. Fixes follow as old value to new, and the last line says what was checked.</p>
       <div class="label">Waiting on one decision</div>
       <div class="row">
         <figure><a href="img/A-1-desk.webp"><img src="img/A-1-desk.webp" width="2200" height="924" alt="A waiting on a decision, desktop" loading="lazy"></a><figcaption><b>Desktop.</b> Three round dots: done, clean, not needed.</figcaption></figure>
@@ -505,7 +528,7 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
         <figure class="ph"><a href="img/A-3-phone.webp"><img src="img/A-3-phone.webp" width="784" height="1030" alt="A not clean, phone" loading="lazy"></a><figcaption><b>Phone.</b></figcaption></figure>
       </div>
       <div class="notes">
-        <div class="for"><b>Why it could work</b><p>The first line answers whether the bid can go out. The clash is read in the bid's own words without opening anything.</p></div>
+        <div class="for"><b>Why it could work</b><p>The first line answers whether the documents can go out. The clash is read in their own words without opening anything.</p></div>
         <div class="cost"><b>What it costs</b><p>The tallest of the six on a phone while a decision is open.</p></div>
         <div class="keys"><b>Keys</b><p>None. The card has no controls, like the Review card.</p></div>
       </div>
@@ -513,15 +536,15 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
 
     <article class="design" id="B">
       <div class="dhead"><span class="id">B</span><h3>Every page</h3><a class="open" href="designs/B.html">Open the full design &rarr;</a></div>
-      <p class="idea">Each document is a strip of its pages. Read pages are dark green, the client's documents blue, and a mark sits on each page where something was fixed or waits on the operator. The clash is one line underneath.</p>
+      <p class="idea">Each document is a strip of its pages. Read pages are dark green, the reference documents blue, and a mark sits on each page where something was fixed or waits on the operator. The clash is one line underneath.</p>
       <div class="label">In the chat</div>
       <div class="row">
-        <figure><a href="img/B-1-desk.webp"><img src="img/B-1-desk.webp" width="2200" height="840" alt="B on a desktop" loading="lazy"></a><figcaption><b>Desktop.</b> 144 pages, three marks on the technical proposal, one on the price offer.</figcaption></figure>
-        <figure class="ph"><a href="img/B-1-phone.webp"><img src="img/B-1-phone.webp" width="784" height="1072" alt="B on a phone" loading="lazy"></a><figcaption><b>Phone.</b> Names above their strips.</figcaption></figure>
+        <figure><a href="img/B-1-desk.webp"><img src="img/B-1-desk.webp" width="2200" height="840" alt="B on a desktop" loading="lazy"></a><figcaption><b>Desktop.</b> 144 pages, three marks on the final report, one on the budget.</figcaption></figure>
+        <figure class="ph"><a href="img/B-1-phone.webp"><img src="img/B-1-phone.webp" width="784" height="1032" alt="B on a phone" loading="lazy"></a><figcaption><b>Phone.</b> Names above their strips.</figcaption></figure>
       </div>
       <div class="notes">
-        <div class="for"><b>Why it could work</b><p>Shows at a glance that no page was skipped, and where in the bid the trouble sits.</p></div>
-        <div class="cost"><b>What it costs</b><p>The quotes shrink to one line. A bid of 400 pages makes thin strips.</p></div>
+        <div class="for"><b>Why it could work</b><p>Shows at a glance that no page was skipped, and where in the set the trouble sits.</p></div>
+        <div class="cost"><b>What it costs</b><p>The quotes shrink to one line. A set of 400 pages makes thin strips.</p></div>
         <div class="keys"><b>Keys</b><p>None.</p></div>
       </div>
     </article>
@@ -546,11 +569,11 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
       <p class="idea">The two clashing sentences are drawn in place on small pictures of their pages, side by side, with a not-equal sign between them. The fixes sit to the right.</p>
       <div class="label">In the chat</div>
       <div class="row">
-        <figure><a href="img/D-1-desk.webp"><img src="img/D-1-desk.webp" width="2200" height="844" alt="D on a desktop" loading="lazy"></a><figcaption><b>Desktop.</b> Page 18 of 42 against page 2 of 6.</figcaption></figure>
+        <figure><a href="img/D-1-desk.webp"><img src="img/D-1-desk.webp" width="2200" height="878" alt="D on a desktop" loading="lazy"></a><figcaption><b>Desktop.</b> Page 18 of 42 against page 2 of 6.</figcaption></figure>
         <figure class="ph"><a href="img/D-1-phone.webp"><img src="img/D-1-phone.webp" width="784" height="946" alt="D on a phone" loading="lazy"></a><figcaption><b>Phone.</b> Two small pages, the fixes below.</figcaption></figure>
       </div>
       <div class="notes">
-        <div class="for"><b>Why it could work</b><p>Closest to how a bid manager checks by hand: two pages open next to each other.</p></div>
+        <div class="for"><b>Why it could work</b><p>Closest to how a reviewer checks by hand: two pages open next to each other.</p></div>
         <div class="cost"><b>What it costs</b><p>The page pictures take room and carry no extra facts.</p></div>
         <div class="keys"><b>Keys</b><p>None.</p></div>
       </div>
@@ -562,7 +585,7 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
       <div class="label">In the chat</div>
       <div class="row">
         <figure><a href="img/E-1-desk.webp"><img src="img/E-1-desk.webp" width="2200" height="766" alt="E on a desktop" loading="lazy"></a><figcaption><b>Desktop.</b> Seven lines, the clash quoted underneath.</figcaption></figure>
-        <figure class="ph"><a href="img/E-1-phone.webp"><img src="img/E-1-phone.webp" width="784" height="770" alt="E on a phone" loading="lazy"></a><figcaption><b>Phone.</b> Short labels, the same counts.</figcaption></figure>
+        <figure class="ph"><a href="img/E-1-phone.webp"><img src="img/E-1-phone.webp" width="784" height="730" alt="E on a phone" loading="lazy"></a><figcaption><b>Phone.</b> Short labels, the same counts.</figcaption></figure>
       </div>
       <div class="notes">
         <div class="for"><b>Why it could work</b><p>The plainest proof that the run did all its work.</p></div>
@@ -573,14 +596,14 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
 
     <article class="design" id="F" style="border-bottom:0">
       <div class="dhead"><span class="id">F</span><h3>The memo</h3><a class="open" href="designs/F.html">Open the full design &rarr;</a></div>
-      <p class="idea">The result is written as a short note to the bid manager, with page numbers as small marks and the old values struck through.</p>
+      <p class="idea">The result is written as a short note to the document owner, with page numbers as small marks and the old values struck through.</p>
       <div class="label">In the chat</div>
       <div class="row">
         <figure><a href="img/F-1-desk.webp"><img src="img/F-1-desk.webp" width="2200" height="614" alt="F on a desktop" loading="lazy"></a><figcaption><b>Desktop.</b> Two paragraphs: the decision, then the fixes.</figcaption></figure>
         <figure class="ph"><a href="img/F-1-phone.webp"><img src="img/F-1-phone.webp" width="784" height="750" alt="F on a phone" loading="lazy"></a><figcaption><b>Phone.</b></figcaption></figure>
       </div>
       <div class="notes">
-        <div class="for"><b>Why it could work</b><p>Can be pasted into an email to the bid team as it stands.</p></div>
+        <div class="for"><b>Why it could work</b><p>Can be pasted into an email to the team as it stands.</p></div>
         <div class="cost"><b>What it costs</b><p>Nothing stands out at a glance. A run with eight clashes makes a long note.</p></div>
         <div class="keys"><b>Keys</b><p>None.</p></div>
       </div>
@@ -596,16 +619,16 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
         <thead><tr><th>Look</th><th>Clash in its own words</th><th>Fixes shown</th><th>Pages read shown</th><th>Rounds shown</th><th>Height on a phone</th></tr></thead>
         <tbody>
           <tr><td class="id">A<span class="nm">Verdict first</span></td><td class="yes">Yes, on two slips</td><td class="yes">Old to new</td><td class="part">One line</td><td class="part">Three dots</td><td>678 px</td></tr>
-          <tr><td class="id">B<span class="nm">Every page</span></td><td class="part">One line</td><td class="part">Marks only</td><td class="yes">Every page</td><td class="part">In words</td><td>535 px</td></tr>
+          <tr><td class="id">B<span class="nm">Every page</span></td><td class="part">One line</td><td class="part">Marks only</td><td class="yes">Every page</td><td class="part">In words</td><td>515 px</td></tr>
           <tr><td class="id">C<span class="nm">The rounds</span></td><td class="part">Values only</td><td class="yes">Old to new</td><td class="no">No</td><td class="yes">Each round</td><td>425 px</td></tr>
           <tr><td class="id">D<span class="nm">The two pages</span></td><td class="yes">Yes, on the pages</td><td class="yes">Old to new</td><td class="no">No</td><td class="part">In words</td><td>472 px</td></tr>
-          <tr><td class="id">E<span class="nm">The receipt</span></td><td class="part">One line</td><td class="part">One line</td><td class="yes">With counts</td><td class="part">One line</td><td>384 px</td></tr>
+          <tr><td class="id">E<span class="nm">The receipt</span></td><td class="part">One line</td><td class="part">One line</td><td class="yes">With counts</td><td class="part">One line</td><td>364 px</td></tr>
           <tr><td class="id">F<span class="nm">The memo</span></td><td class="yes">In the note</td><td class="yes">Struck through</td><td class="part">In words</td><td class="part">In the head</td><td>374 px</td></tr>
         </tbody>
       </table>
     </div>
     <div class="next">
-      <p><b>Recommended: A, Verdict first.</b> Its first line answers whether the bid can go out, and the clash is shown in the bid's own words. Its last line keeps the proof that every page was read.</p>
+      <p><b>Recommended: A, Verdict first.</b> Its first line answers whether the documents can go out, and the clash is shown in their own words. Its last line keeps the proof that every page was read.</p>
       <p><b>Next.</b> The operator picks a look. Then the command, the reading of Word and PDF files, the rounds, the tracked changes, the settings page and the card are built together.</p>
     </div>
   </div>
@@ -615,7 +638,7 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
 <footer>
   <div class="wrap">
     <p>Design document, 7 October 2026, written by an agent running in imba. Nothing on this page is built yet. Every picture is taken from the design's own page; open a design for both widths.</p>
-    <p>The tender, its company, its sentences and its figures are made up for this page. The address imba.example.com stands in for a real server.</p>
+    <p>The client, the project, its sentences and its figures are made up for this page. The address imba.example.com stands in for a real server.</p>
   </div>
 </footer>
 </body>
