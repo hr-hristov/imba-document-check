@@ -259,7 +259,7 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
     <p class="kicker">Document check &middot; design document</p>
     <h1>Catch the <span class="now">contradiction</span> before the client does</h1>
     <p class="lede">imba is an app for running AI agents. Each agent works in a chat, called a spawn, inside one folder of files. Most documents a business delivers live in such a folder: a final report with its budget and annexes, a tender bid, an annual report, a policy set, next to the contract or brief they must agree with.</p>
-    <p class="lede">Several people write those documents over several weeks, and they drift apart. Document check is a new command that reads every page, finds statements that cannot both be true, fixes what the reference documents settle, and checks every document again in rounds until one comes back clean.</p>
+    <p class="lede">Several agents write on one set of documents at the same time, each in its own spawn and its own part. Each agent sees only its own changes, so the documents drift apart: one agent shortens the delivery period in the report while another still prices the old one in the budget. Document check is a new command that reads every page, finds statements that cannot both be true, fixes what the reference documents settle, and checks every document again in rounds until one comes back clean.</p>
 
     <div class="compare">
       <div>
@@ -298,7 +298,7 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
     <h2>What was asked</h2>
     <p>A check like imba's code review, which sends several read-only AI reviewers over a change and confirms what they find. This one reads business documents instead of code.</p>
     <div class="brief">
-      <div><b>Business documents to be delivered</b><span>Reports, proposals, bids, contracts, plans, policies and CVs. Prose, in Word and PDF.</span></div>
+      <div><b>Business documents to be delivered</b><span>Reports, proposals, bids, contracts, plans, policies and CVs, written by several agents at once. Prose, in Word and PDF.</span></div>
       <div><b>Every statement</b><span>Each checkable statement is pulled out with its quote and page, then compared with every other statement on the same subject.</span></div>
       <div><b>Several reviewers</b><span>Seven read-only reviewers in each round, and every subject is compared by two of them.</span></div>
       <div><b>Guaranteed to finish the work</b><span>imba checks each step itself before the next starts. A skipped page or a silent reviewer stops the round.</span></div>
@@ -430,7 +430,7 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
     <p>Automatic fix is on by default, and only for clashes a reference document or a redone sum settles. Every fix is checked by the next full round like any other statement.</p>
     <div class="fixwrap">
       <ul class="fixlist">
-        <li class="w"><b>Word files</b>A tracked change by &ldquo;imba&rdquo;, which the author accepts or rejects in Word. imba refuses the change when the old words are missing from the page or appear on it twice.</li>
+        <li class="w"><b>Word files</b>A tracked change by &ldquo;imba&rdquo;, which the document owner accepts or rejects in Word. imba refuses the change when the old words are missing from the page or appear on it twice.</li>
         <li class="t"><b>Markdown and text</b>Edited in place.</li>
         <li class="p"><b>PDF</b>Never edited. The new wording goes into the fix plan.</li>
         <li class="o"><b>A clash nothing settles</b>Never edited. Both statements go to the operator with the agent's recommended answer.</li>
