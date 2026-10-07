@@ -20,7 +20,6 @@ a { color:var(--lit); }
 .state-label i { font-style:normal; display:inline-grid; place-items:center; width:20px; height:20px; background:var(--lit); color:var(--page); font-size:11px; }
 .state-label small { font-weight:400; color:var(--muted); font-size:11px; }
 .pair { display:flex; gap:28px; align-items:flex-start; }
-@media (max-width:880px) { .pair { flex-direction:column; } }
 .phone-col { flex:0 0 392px; width:392px; }
 .desk-col { flex:1 1 820px; min-width:820px; max-width:1100px; }
 .cap { font-size:10.5px; color:var(--dim); text-transform:uppercase; letter-spacing:.07em; margin:0 0 6px 4px; }
@@ -223,3 +222,14 @@ s { color:var(--dim); text-decoration-color:var(--err); }
 .memo sup { font:600 9px var(--sans); color:var(--muted); margin-left:1px; }
 .memo .q { color:var(--warn); }
 .ph .memo { font-size:13.5px; }
+
+/* Narrow screens: the two frames stack, and the desktop frame scrolls inside its own column. */
+@media (max-width:880px) {
+  .pair { flex-direction:column; }
+  .phone-col, .desk-col { flex:none; width:100%; min-width:0; }
+  .phone-col { max-width:392px; }
+  .phone { width:100%; }
+  .desk-col { overflow-x:auto; }
+  .desk-col .browser { min-width:820px; }
+}
+@media (max-width:420px) { .pfeed { padding-left:42px; padding-right:42px; } }
